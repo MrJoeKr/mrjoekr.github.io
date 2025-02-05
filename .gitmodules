@@ -1,0 +1,3 @@
+[submodule "FeelViz"]
+	path = FeelViz
+	url = git@github.com:MrJoeKr/FeelViz.git

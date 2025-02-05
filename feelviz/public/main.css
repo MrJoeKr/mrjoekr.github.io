@@ -1,0 +1,139 @@
+body {
+	background:#767a83;
+	/*margin-top:50px;*/
+	font: 15px "Trebuchet MS";
+	color:#c0c0c0;
+}
+
+h1, h2 {
+    color: white;
+    font-family: "Trebuchet MS";
+}
+
+#title {
+    color: white;
+    font-family: "Trebuchet MS";
+    font-size: 30px;
+    margin-left: 190px;
+    margin-bottom: 50px;
+}
+
+.center-div {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#graph-div {
+    width: 1000px;
+    height: 500px;
+    border: 3px solid black;
+    background-color: rgb(240, 236, 236);
+    position: relative;
+    overflow: hidden;
+}
+
+#select-time-interval-text {
+    color: white;
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#time-interval-div {
+    width: 500px;
+    height: 100px;
+    margin-left: 40px;
+}
+
+#selected-node-div {
+    width: 500px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: -60px;
+}
+
+#selected-mindstate-div {
+    width: 500px;
+    height: 100px;
+    margin-top: 0px;
+    margin-bottom: -10px;
+}
+
+#histogram-div, #piechart-div {
+    width: 500px;
+    height: 300px;
+    /* padding: 0; */
+    /* margin: 0; */
+    margin-left: 20px;
+}
+
+/* POPUP */
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 200%;
+    height: 200%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+
+#popup-text {
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px;
+    margin-left: 18px;
+    border-radius: 5px;
+}
+
+
+.white_content {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 16px;
+    border: 2px solid #767A83;
+    background-color: #767A83;
+    z-index:1002;
+    overflow: auto;
+}
+
+.white_content p {
+    color: white;
+    font-family: "Trebuchet MS";
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.white_content ul {
+    color: white;
+    font-family: "Trebuchet MS";
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.white_content li {
+    margin-bottom: 6px;
+}
+
+/* Text that is not selectable */
+/* Source: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

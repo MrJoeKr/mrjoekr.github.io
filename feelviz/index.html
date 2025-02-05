@@ -1,16 +1,61 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <title>FeelViz</title>
+    <link href="./public/main.css" rel="stylesheet">
+    <script type="module" src="public/d3app.js"></script>
+    
   </head>
   <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-    <script src="index.js"></script>
+    <div class="center-div">
+    <h1 id="title">FeelViz: My Mental Wellbeing Visualization</h1>
+
+    <a id="popup-text" href="javascript:void(0)" onclick="toggleLightbox(true)">Graph legend and visualization description</a>
+    <div id="light" class="white_content">
+        <p> Zoom in and out with the mouse wheel in the graph background to see the graph in more detail.</p>
+        <p>Click on a node to update the charts. Second click will deselect the node.</p>
+        <p><i><b>Graph colors</b></i>: Most common feeling during the given time interval. Hover on pie chart to see type of feelings.</p>
+        <p>
+            <i><b>Graph Shapes:</b></i>
+            <ul>
+                <li>★ Star: Association, things that had biggest impact on me in a day (Family, Work, Friends,...).</li>
+                <li>◼ Rectangle: Description, specific feelings that I had in a day (Happy, Sad, Frustrated,...).</li>
+                <li>⬤ Circle: Context, my own thoughts and feelings that I had in a day ("Productive day, a lot of work", ...).</li>
+            </ul>
+        </p>
+        <p style="margin-top: 10px;">
+            The <i>size</i> of the node represents the number of times I had that feeling in the given time interval.
+        </p>
+        <p>
+            The <i>distance</i> between the nodes represents the frequency of these two words appearing together in the same day (if possible).
+        </p>
+        <p>
+            Drag a node to rotate the graph according to your preference.
+        </p>
+    </div>
+    <div id="fade" class="black_overlay" onclick="toggleLightbox(false)"></div>
+
+    <script>
+      function toggleLightbox(show) {
+        document.getElementById('light').style.display = show ? 'block' : 'none';
+        document.getElementById('fade').style.display = show ? 'block' : 'none';
+      }
+    </script>
+
+    <div style="display: flex; align-items: center; margin-top: 20px;">
+      <div id="select-time-interval-text">Select time interval [start, end):</div>
+      <div id="time-interval-div" style="margin-left: 10px;"></div>
+    </div>
+    <div class="border">
+        <div id="graph-div"></div>
+    </div>
+    <div id="selected-node-div"></div>
+    <div id="selected-mindstate-div"></div>
+
+    <div style="display: flex;">
+      <div id="histogram-div"></div>
+      <div id="piechart-div"></div>
+    </div>
+    </div> <!-- Center div -->
   </body>
-</html>
